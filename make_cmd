@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Make a command
+
+# Change the mode
+
+chmod +x $1
+
+# Done

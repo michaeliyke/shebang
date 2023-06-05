@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Shebang line
+
+# Git pull
+
+git pull
+
+# Done!

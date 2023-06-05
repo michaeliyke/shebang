@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Shebang line
+
+# Git commit
+
+git commit  -m "$*"
+
+# Done!

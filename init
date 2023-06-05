@@ -1,0 +1,8 @@
+#!/bin/bash
+# Shebang line
+
+# Initialize a repository
+
+git init
+
+# Done!

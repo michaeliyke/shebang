@@ -1,0 +1,9 @@
+ #!/bin/bash
+
+# Shebang line
+
+# Alias to the add command
+
+add $*
+
+# Done
