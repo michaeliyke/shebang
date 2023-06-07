@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# shebang line
+
+# Following code moves a file in pwd to thee ~/.michaeliyke directory
+
+mv  $* ~/.michaeliyke 
+

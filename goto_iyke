@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# shebang line
+
+# The following code changes directory to the ~/.michaeliyke directory
+bash
+
+ echo cd ~/.michaeliyke
+
+cd ~/.michaeliyke

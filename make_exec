@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# shebang line
+
+# The following code makes a script executable
+
+chmod +x $1
+

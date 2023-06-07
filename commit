@@ -1,9 +1,4 @@
 #!/bin/bash
 
-# Shebang line
+git commit -am "$*"
 
-# Git commit
-
-git commit  -m "$*"
-
-# Done!

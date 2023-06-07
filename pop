@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# shebang line
+
+# Following code implements basic pop windows command
+echo cd -
+
+cd -
