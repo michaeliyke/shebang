@@ -1,0 +1,8 @@
+#!/bin/bash
+# The shebang line
+
+# The following code prints git details of last commit
+
+git cat-file -p HEAD@{0}
+
+# Done!
