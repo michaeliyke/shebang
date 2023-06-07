@@ -1,0 +1,6 @@
+#!/bin/bash
+#shebang line
+
+# Following code simulates the wondows where command with which
+which $1
+
