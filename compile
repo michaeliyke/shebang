@@ -1,0 +1,4 @@
+#!/bin/bash
+
+gcc -Wall -Wextra -pedantic -Werror -std=gnu89 -g $*
+

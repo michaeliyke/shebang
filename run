@@ -1,0 +1,6 @@
+#!/bin/bash
+
+clear
+
+compile *.c && ./a.out
+
