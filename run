@@ -1,6 +1,6 @@
 #!/bin/bash
 
 clear
-
-compile *.c && ./a.out
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 test/main.c *.c  && ./a.out
+# gcc *.c test/main.c -std=gnu89 && ./a.out
 

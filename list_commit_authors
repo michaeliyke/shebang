@@ -1,0 +1,16 @@
+#!/bin/bash
+  
+   clear
+  
+git log --pretty=format:"%h    %ar    %an"
+# git log --pretty=format:%h:%an:%s
+# Hash, Author name and commit message
+# git log --date=short --pretty=format:%h:%ad
+# Hash, and Author date short
+# git log --pretty=format:%h:%ar
+# Hash, Author date relative like 2 minutes go etc
+# git log --date=short --pretty=format:%h:%cd
+# Hash and commit date
+# https://www.git-scm.com/docs/git-log
+# https://stackoverflow.com/questions/7853332/how-to-change-git-log-date-formats
+ 
