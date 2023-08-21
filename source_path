@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# reload ~/.bashrc
+source ~/.bashrc
+
+# print a success message
+echo "PATH reloaded successfully"

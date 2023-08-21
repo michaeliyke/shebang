@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# check if the argument is given
+if [ -z "$1" ]; then
+  echo "Usage: $0 directory"
+  exit 1
+fi
+
+# check if the argument is a valid directory
+if [ ! -d "$1" ]; then
+  echo "$1 is not a valid directory"
+  exit 2
+fi
+
+# get the absolute path of the directory
+dir=$(realpath "$1")
+
+# check if the PATH already contains the directory
+if [[ ":$PATH:" == *":$dir:"* ]]; then
+  echo "$dir is already in the PATH"
+  exit 0
+fi
+
+# append the directory to the PATH in ~/.bashrc
+echo "export PATH=$dir:\$PATH" >> ~/.bashrc
+
+# reload ~/.bashrc
+source ~/.bashrc
+
+# print a success message
+echo "$dir added to the PATH successfully"
