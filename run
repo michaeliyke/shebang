@@ -1,8 +1,10 @@
 #!/bin/bash
 
 clear
-#gcc -Wall -Werror -Wextra -pedantic -std=gnu89 test/main.c *.c  && ./a.out
-# gcc *.c test/main.c -std=gnu89 && ./a.out
 
-nasm -f elf64 101-hello_holberton.asm && gcc -no-pie 101-hello_holberton.o && ./a.out
+compile $1 -o a.out
+
+shift
+./a.out $*
+
 
