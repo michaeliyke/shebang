@@ -1,10 +1,24 @@
 #!/bin/bash
 
 clear
+comp_args=()
+args=("$@")
+index=0
 
-compile $1 -o a.out
+# Loop though command arguments and
+# filter out c files into the array com_args
+# remove the c file from the command arguments
+# At last, args will only contain arguments meant for the program
+for arg in "${args[@]}"; do
+  if [[ $arg == *.c ]]; then
+    comp_args+=("$arg")
+    unset "args[$index]"
+  fi
+  ((index++))
+done
 
-shift
-./a.out $*
 
-
+# call compile with c files and
+# call program with program arguments
+compile "${comp_args[@]}" -o a.out
+./a.out "${args[@]}"
