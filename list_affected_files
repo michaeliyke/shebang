@@ -1,0 +1,15 @@
+#!/bin/bash
+clear
+# LIST AFFECTED FILES OF A GIT COMMIT SHA-1 or THE HEAD
+
+if (( $# == 0 )); then
+  printf "Affected files of commit: 'HEAD'\n\n"
+  git diff-tree --no-commit-id --name-only -r HEAD
+  printf "\n"
+elif (( $# >= 2 )); then
+	printf "Usage: %s SHA-1\n\n" "$0"
+else
+  printf "Affected Files of Commit: '%s'\n\n" "$1"
+  git diff-tree --no-commit-id --name-only -r "$1"
+  printf "\n"
+fi
