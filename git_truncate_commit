@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Truncate commit all deletes commits made after a commit desired to keep
+# It helps correct mistaken commit that pushes up credentials
+# You can simply remove the offending commit
+
+# Steps
+# 1. Soft Reset to the commit desired
+# 2. Force a push that sets new latest commit to the new HEAD - the SHA-1
+# Done!
+# Remove or modify the offending file, add, commit, and push seemlessly
+
+# Ensure arguments 1
+if [ -z "$1" ]; then
+	echo "$(basename $0) SHA-1-to-keep"
+	exit 1
+fi
+git reset "$1" # Soft reset
+git push origin "$1":master --force
+# If this step fails, then the correct files, add and commit first
+# Then try again with the new SHA-1
