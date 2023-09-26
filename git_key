@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Display the current Git Access Token key
+file=$bin/git_tokens
+echo
+if [ -f $file ]; then
+	cat $file
+	echo Done!
+	echo
+	exit 0
+fi
+echo "NOT FOUND!"
+echo
+exit 0

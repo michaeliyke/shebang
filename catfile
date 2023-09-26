@@ -2,6 +2,10 @@
 # The shebang line
 
 # The following code prints git details of last commit
+if [ -n "$1" ]; then
+	git cat-file -p $1
+	exit 0
+fi
 
 git cat-file -p HEAD@{0}
 
