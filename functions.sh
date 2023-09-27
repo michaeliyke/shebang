@@ -1,5 +1,8 @@
 #!/bin/bash
 
+on_start_file="$bin/on_start.sh"
+
+
 # PERSONAL BASH FUNCTIONS FOR FUN
 
 # WILL RUN BEFORE EACH COMMAND
@@ -11,6 +14,11 @@ function preexec() {
 function precmd() {
     # Custom code to execute before each prompt
 		prompt_string
+		if [ -f "$on_start_file" ]; then
+			if [[ -z "$on_start" || "$on_start" -eq "0" ]]; then
+				source "$on_start_file" # Only source if on_start is 0 or unset
+			fi
+		fi
 }
 
 
