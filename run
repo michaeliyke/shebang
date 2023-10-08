@@ -4,6 +4,7 @@ clear
 comp_args=()
 args=("$@")
 index=0
+compile_status=0
 
 # Loop though command arguments and
 # filter out c files into the array com_args
@@ -20,5 +21,17 @@ done
 
 # call compile with c files and
 # call program with program arguments
-compile "${comp_args[@]}" -o a.out
+gcc -Wall -Wextra -pedantic -Werror -std=gnu89 -g "${comp_args[@]}" -o a.out
+
+# Execute compiled prgram only if compilation was successful
+compile_status=$(echo $?)
+echo
+if (( $compile_status != 0 )); then
+	echo "Compilation failed!"
+	echo
+	exit $compile_status
+fi
+
+echo "Build successful!"
+echo
 ./a.out "${args[@]}"

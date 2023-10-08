@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# This file serves to remind me how to add the EOT ^D or '\004' char to the end of a file
+# I assume that $1 is our filename
+
+if [ $# = 0 ]; then
+	# Announce that filename argument is required
+	echo "Usage: $(basename $0 filename)"
+	exit 1
+fi
+
+filename=$(realpath "$1") # The filename that EOT should be appended
+
+if [[ -e "${filename}" ]]; then
+	echo -e '\004' >> ${filename}
+	echo Done!
+	exit 0
+fi
+
+echo "Ensure the $(basename ${filename}) exists"
+exit 1

@@ -1,9 +1,46 @@
 #!/bin/bash
-
-on_start_file="$bin/on_start.sh"
-
-
 # PERSONAL BASH FUNCTIONS FOR FUN
+
+# CD FUNCTIONS
+function alx()
+{
+	cd ~/alx
+	echo ""Welcome to Alx space
+}
+
+function home()
+{
+	cd ~
+	echo "Welcome to ${USER}'s space"
+}
+
+function alx_lowlevel()
+{
+	cd ~/alx/alx-low_level_programming/
+	echo "Welcome to the Alx Low Level Programming space"
+}
+
+
+# Function that gets base name of a dir path
+function get_basename()
+{
+	local path="$1"
+	echo "${path##*.}" # Same as `basename $1`
+}
+
+# Function that gets a file's extension
+function get_extension()
+{
+	local filename="$1"
+	echo "${filename##*.}"
+}
+
+# Function that gets a file name from path
+function get_filename()
+{
+	local file_path="$1"
+	echo "${file_path##*/}"
+}
 
 # WILL RUN BEFORE EACH COMMAND
 function preexec() {
@@ -39,7 +76,7 @@ function prompt_string()
 	unset PS1
 	PS1='\[\033[01;38;5;28m\]λ\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]\n\$\[\033[00m\] '
 	# The window title
-	PS1="\[\e]0;PT NG         $(date '+%d/%m %H:%M')\a\]$PS1"
+	PS1="\[\e]0;michael iyke         $(date '+%d/%m %H:%M')    -    alx\a\]$PS1"
 	# Restore ls color support
 	ls_color
 }

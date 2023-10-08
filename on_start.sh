@@ -1,26 +1,19 @@
 # This page will be added to the precmd function
 # which executes after every command
 # However, we'll control it to execute only once
-# By setting a valiable
-echo HERE TOO
-ERROR=1 # An error occured
-SET_SUCCESS=0 # on_start was set in this session
-ALREADY_SET_SUCCESS=2 # on_start was set earlier
+# By setting a variable
+ERROR=1 # Error code
+SUCCESS=0 # Success code
+ALREADY_SET=2 # Code to signal prior execution
 
-# on_start already set to 1
-if (( $on_start==1 )); then
-	return $ALREADY_SET_SUCCESS
-	# on_start was set to unknown value
-elif [ "$on_start" -ne "0" ]; then
+# on_start value 1
+if (( on_start == 1 )); then
+	return $ALREADY_SET
+elif [[ $on_start -ne 0 ]]; then # value unknown
 	return $ERROR
-fi
-
-# If on_start is 0, it was purposely to reset on_start
-if (( $on_start == 0 )); then
+elif (( on_start==0 )); then # value 0, reset
 	on_start=1
-fi
-
-if [ -z "$on_start" ]; then
+elif [ -z $on_start ]; then # value not set yet
 	on_start=1
 fi
 
@@ -57,4 +50,4 @@ echo
 echo
 echo
 
-return $SET_SUCCESS
+return $SUCCESS

@@ -2,7 +2,7 @@
 
 # check if the argument is given
 if [ -z "$1" ]; then
-  echo "Usage: $0 directory"
+  echo "Usage: $(basename $0) directory"
   exit 1
 fi
 
