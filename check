@@ -1,0 +1,9 @@
+#!/bin/bash
+
+clear
+
+gcc -Wall -Wextra -pedantic -Werror -std=gnu89 -g bool_opts-*.c util-* main.c builtins-*.c -o hsh
+if (($? != 0)); then exit
+fi
+./runchecker.bash $1
+

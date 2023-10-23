@@ -21,18 +21,17 @@ done
 
 # call compile with c files and
 # call program with program arguments
-gcc -Wall -Wextra -pedantic -Werror -std=gnu89 -g "${comp_args[@]}" -o a.out
+# gcc -Wall -Wextra -pedantic -Werror -std=gnu89 -g "${comp_args[@]}" -o hsh
+gcc -Wall -Wextra -pedantic -Werror -std=gnu89 -g util-* builtins-*.c bool_opts-*.c main.c -o hsh
 
 # Execute compiled prgram only if compilation was successful
 compile_status=$(echo $?)
-
 if (( $compile_status != 0 )); then
-	echo
+echo
 	echo "Compilation failed!"
 	echo
 	exit $compile_status
 fi
 
 # echo "Build successful!"
-# echo
-./a.out "${args[@]}"
+./hsh "${args[@]}"

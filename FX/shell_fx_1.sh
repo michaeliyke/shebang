@@ -1,54 +1,33 @@
 #!/bin/bash
-# PERSONAL BASH FUNCTIONS FOR FUN
 
-# CD FUNCTIONS
-function alx()
+
+function source_path()
 {
-	cd ~/alx
-	echo ""Welcome to Alx space
+	# reload ~/.bashrc
+	source ~/.bashrc
+
+	# print a success message
+	echo "PATH reloaded successfully"
 }
 
-function home()
+function reload_path()
 {
-	cd ~
-	echo "Welcome to ${USER}'s space"
-}
-
-function alx_lowlevel()
-{
-	cd ~/alx/alx-low_level_programming/
-	echo "Welcome to the Alx Low Level Programming space"
-}
-
-
-# Function that gets base name of a dir path
-function get_basename()
-{
-	local path="$1"
-	echo "${path##*.}" # Same as `basename $1`
-}
-
-# Function that gets a file's extension
-function get_extension()
-{
-	local filename="$1"
-	echo "${filename##*.}"
-}
-
-# Function that gets a file name from path
-function get_filename()
-{
-	local file_path="$1"
-	echo "${file_path##*/}"
+	# reload ~/.bashrc
+	source ~/.bashrc
+	
+	# print a success message
+	echo "PATH reloaded successfully"
 }
 
 # WILL RUN BEFORE EACH COMMAND
-function preexec() {
-    		echo "Executing custom code before command: $1"
+function preexec()
+{
+    echo "Executing custom code before command: $1"
 }
 
 # WILL RUN AFTER EACH COMMAND
-function precmd() {
+function precmd()
+{
     # Custom code to execute before each prompt
 		prompt_string
 		if [ -f "$on_start_file" ]; then
@@ -58,15 +37,6 @@ function precmd() {
 		fi
 }
 
-
-#  Strip possible leading zero(s)
-#+ from the argument passed
-#  The "1" refers to "$1"
-#  The "0" is what to remove - strip zero(s)
-strip_leading_zero()
-{
-	return=${1#0}
-}
 
 
 function prompt_string()

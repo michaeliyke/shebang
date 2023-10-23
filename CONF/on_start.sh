@@ -6,6 +6,8 @@ ERROR=1 # Error code
 SUCCESS=0 # Success code
 ALREADY_SET=2 # Code to signal prior execution
 
+# echo HERE
+
 # on_start value 1
 if (( on_start == 1 )); then
 	return $ALREADY_SET
@@ -17,6 +19,7 @@ elif [ -z $on_start ]; then # value not set yet
 	on_start=1
 fi
 
+# echo HERE 3
 
 clear
 

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# INITIALIZATIONS ISLAND
+
+# configs directory
+CONF=$HOME/bin/CONF
+
+# Functions directory
+FX=$HOME/bin/FX
+
+# LOAD PERSONAL ALIASES FILE
+if [ -f $CONF/ALIASES.sh ]; then
+	source $CONF/ALIASES.sh
+fi
+
+# LOAD GENEREAL CONFIGURATIONS
+if [ -f $CONF/GENERAL_CONFIGS.sh ]; then
+	source $CONF/GENERAL_CONFIGS.sh
+fi
+
+# LOAD FUNCTION FILES REGISTER
+# THIS FILE SHOULD REGISTER ALL AVAILABLE FUNCTION FILES
+if [ -f $CONF/FUNCTIONS_REG.sh ]; then
+	source $CONF/FUNCTIONS_REG.sh
+fi

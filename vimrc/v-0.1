@@ -1,0 +1,22 @@
+:imap <C-/> #
+set tabstop=8 shiftwidth=8
+set autoindent
+set smartindent
+set cindent
+syntax enable
+set number
+set mouse=a
+
+colorscheme morning
+
+function! PrependComment()
+    let current_line = getline('.')
+    if current_line =~ '^#'
+        return "\<CR>#+ "
+    else
+        return "\<CR>"
+    endif
+endfunction
+
+inoremap <expr> <CR> PrependComment()
+

@@ -15,7 +15,7 @@ PROMPT_COMMAND='precmd'
 PS1='λ:\w\n$ '
 # prompt_string
 
-export {michaeliyke,michael,mybin,bin}="$user_bin"
+export {michaeliyke,michael,mybin,bin}="$USER_BIN"
 export {bashrc,rc,config,conf}="$bashrc_path"
 
 alias {vag,vg}='valgrind'

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+clear
+
+/usr/bin/gcc -Wall -Wextra -pedantic -Werror -std=gnu89 -g -O0 bool_opts-*.c util-* main.c builtins-*.c -o hsh
+if (($? != 0)); then exit
+fi
+
+/usr/bin/valgrind  --track-origins=yes --leak-check=yes ./hsh

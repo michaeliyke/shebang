@@ -2,5 +2,5 @@
 
 clear
 
-betty $* && betty-doc $*
+betty  $* && betty-doc  $*
 
