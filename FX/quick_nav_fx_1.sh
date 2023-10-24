@@ -49,9 +49,22 @@ function cdlowlevel()
 	echo "Welcome to the Alx Low Level Programming space"
 }
 
+# For resting
 function lowlevel()
 {
-	return~/alx/alx-low_level_programming/
-	echo "Welcome to the Alx Low Level Programming space"
+	echo ~/alx/alx-low_level_programming/
+}
+
+# CD FUNCTIONS
+function cdbook()
+{
+	cd $HOME/michaeliyke/tutorials/books/ANSI-C-Programming-Language
+	echo "Welcome to ANSI C Programming space"
+}
+
+function bcdooks()
+{
+	cd $HOME/michaeliyke/tutorials/books/ANSI-C-Programming-Language
+	echo "Welcome to ANSI C Programming space"
 }
 

@@ -4,22 +4,15 @@
 
 
 # CD FUNCTIONS
-function simple_shell()
+function cdsimpleshell()
 {
 	cd ~/alx/simple_shell
 	echo "Welcome to simple shell space"
 }
 
-
 # CD FUNCTIONS
-function book()
+function cdbookANSI_C_Programming_Language()
 {
 	cd $HOME/michaeliyke/tutorials/books/ANSI-C-Programming-Language
-	echo "Welcome to ANSI C Programming space"
-}
-
-function books()
-{
-	cd $HOME/michaeliyke/tutorials/books/ANSI-C-Programming-Language
-	echo "Welcome to ANSI C Programming space"
+	echo "Welcome to ANSI C Programming Language space"
 }
