@@ -3,42 +3,55 @@
 # Functions for quick navigation on the command line
 
 # CD FUNCTIONS
-function simple_shell()
+function cdprintf()
 {
-	cd ~/alx/simple_shell
-	echo "Welcome to simple shell space"
-}
-
-# CD FUNCTIONS
-function printf()
-{
-	cd ~/alx/printf
+	cd ~/alx/projects/printf/
 	echo "Welcome to printf space"
 }
 
-# CD FUNCTIONS
-function alx()
+function cdfx()
+{
+	cd "$FX"
+	echo "Welcome to FX space"
+}
+
+function cdconf()
+{
+	cd "$CONF"
+	echo "Welcome to CONF space"
+}
+
+
+
+function cdalx()
 {
 	cd ~/alx
 	echo "Welcome to Alx space"
 }
 
 
-function iyke()
+function cdiyke()
 {
 	cd ~/bin
 	echo "Welcome to bin space"
 }
 
 # 
-function home()
+function cdhome()
 {
 	cd ~
 	echo "Welcome to ${USER}'s space"
 }
 
-function alx_lowlevel()
+function cdlowlevel()
 {
 	cd ~/alx/alx-low_level_programming/
 	echo "Welcome to the Alx Low Level Programming space"
 }
+
+function lowlevel()
+{
+	return~/alx/alx-low_level_programming/
+	echo "Welcome to the Alx Low Level Programming space"
+}
+

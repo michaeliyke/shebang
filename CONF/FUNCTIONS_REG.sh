@@ -5,6 +5,11 @@
 
 
 # LOAD THE QUICK XYZ FUNCTIONS
+if [ -f $FX/CORE_FX.sh ]; then
+	source $FX/CORE_FX.sh
+fi
+
+# LOAD THE QUICK XYZ FUNCTIONS
 if [ -f $FX/QUICK_FX.sh ]; then
 	source $FX/QUICK_FX.sh
 fi

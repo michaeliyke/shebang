@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# FILE EDITING
+# $FX REFERS CURRENT FOLDER
+
+

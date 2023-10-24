@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# THE CORE FX SPACE IS FOR CORE FUNCTIONS THAT PRIMARILY PROVIDE
+# FUNCTIONALITY TO THIS CODEBASE ITSELF.
+
+if [ -f $FX/core_fx_1.sh ]; then
+	source $FX/core_fx_1.sh
+fi
