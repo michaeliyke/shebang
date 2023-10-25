@@ -16,3 +16,9 @@ function cdbookANSI_C_Programming_Language()
 	cd $HOME/michaeliyke/tutorials/books/ANSI-C-Programming-Language
 	echo "Welcome to ANSI C Programming Language space"
 }
+
+function cdbin()
+{
+	cd $HOME/bin
+	echo "Welcome to the bin space"
+}
