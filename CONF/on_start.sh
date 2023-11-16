@@ -21,7 +21,7 @@ fi
 
 # echo HERE 3
 
-clear
+# clear
 
 echo "                                                       "
 echo "                                                       "

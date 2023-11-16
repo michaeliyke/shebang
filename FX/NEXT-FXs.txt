@@ -1,0 +1,30 @@
+WOULD BE FUNCTIONS
+set_var or setvar
+setenv or set_env
+rename_remote_url - for git opt.
+git remote set-url origin https://michaeliyke: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@github.com/michaeliyke/alx-higher_level_programming.git
+
+path - list all dirs in the system path
+list_path, path_dirs, dirs - aliases to the above
+
+create_env()
+name=$1
+py_ver=$2
+if no name or no py_ver - show usage
+if name = --help or name == -h - show usage
+# conda create --name py38 python=3.8
+conda create --name name python=py_ver
+
+activate()
+if not $1 - show usage
+# conda activate py38
+conda activate $1
+
+deactivate()
+conda deactivate
+
+activate38()
+conda activate py38
+
+activate_default()
+conda activate base

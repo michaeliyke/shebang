@@ -12,3 +12,7 @@ export {bashrc,rc,config,conf}="$bashrc_path"
 export CURRENT_WORKING_DIR=
 export test_putchar=$michael/test_putchar
 # PATH="$HOME/bin:$URRENT_WORKING_DIR"
+
+# ENVIRONMENT VARS
+export PYFILE=main.py
+export PYCODE="print('Alx school')"

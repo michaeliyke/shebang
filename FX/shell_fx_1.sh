@@ -1,23 +1,35 @@
 #!/bin/bash
 
+function setaliases()
+{
+	# open a book where aliases can be set
+	local aliases_file="$CONF/aliases.sh"
 
-function source_path()
+	subl -w -n "$aliases_file"
+}
+
+function setalias()
+{
+	local alias_name=$1
+	local value=$2
+	local aliases_file="$CONF/aliases.sh"
+
+	if(( $# == 0  )) || [ "$1" -eq "-h" ] || [ "$1" -eq "--help" ]; then
+		echo "setalias new_aliase you_command"
+	fi
+	append $aliases_file "alias $alias_name='$value'"
+	reload_configs
+}
+
+function reload_configs()
 {
 	# reload ~/.bashrc
 	source ~/.bashrc
 
 	# print a success message
-	echo "PATH reloaded successfully"
+	echo "Configurations reloaded successfully"
 }
 
-function reload_path()
-{
-	# reload ~/.bashrc
-	source ~/.bashrc
-	
-	# print a success message
-	echo "PATH reloaded successfully"
-}
 
 # WILL RUN BEFORE EACH COMMAND
 function preexec()
@@ -44,13 +56,26 @@ function prompt_string()
 	# ACTUAL prompt sring
 	# deep green, grey, blue, grey
 	unset PS1
-	PS1='\[\033[01;38;5;28m\]λ\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]\n\$\[\033[00m\] '
+	# PS1='\[\033[01;38;5;28m\]λ\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]\
+	# \n($CONDA_DEFAULT_ENV)\$\[\033[00m\] '
+
+	PS1='\[\033[01;38;5;28m\]λ\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]\
+	\n\[\033[01;36m\]($CONDA_DEFAULT_ENV)\[\033[01;31m\] \$\[\033[00m\] '
+
+	PS1='\[\033[01;38;5;28m\]λ\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]\
+	\n\[\033[01;36m\]$([[ -n $CONDA_DEFAULT_ENV ]]&&echo "($CONDA_DEFAULT_ENV) ")\
+\[\033[01;31m\]\$\[\033[00m\] '
+
+	# output:
+	# λ:~	
+	# (base) $ 
+
 	# The window title
-	PS1="\[\e]0;michael iyke         $(date '+%d/%m %H:%M')    -    alx\a\]$PS1"
+	PS1="\[\e]0;MICHAEL IYKE (alx)   -   $(date '+%d/%m %H:%M')\a\]$PS1"
 	# Restore ls color support
 	ls_color
 }
-
+# PS1+=\" [$ {cyan}]<$ ($CONDA_DEFAULT_ENV)> \"
 function ls_color()
 {
 	if [ -x /usr/bin/dircolors ]; then
