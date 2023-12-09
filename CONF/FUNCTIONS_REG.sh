@@ -3,6 +3,10 @@
 # FUNCTIONS ISLAND
 # LOAD ALL FUNCTIONS BELOW
 
+# LOAD THE QUICK XYZ FUNCTIONS
+if [ -f $FX/GIT_FX.sh ]; then
+	source $FX/GIT_FX.sh
+fi
 
 # LOAD THE QUICK XYZ FUNCTIONS
 if [ -f $FX/CORE_FX.sh ]; then

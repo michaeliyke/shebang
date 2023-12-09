@@ -2,7 +2,7 @@ WOULD BE FUNCTIONS
 set_var or setvar
 setenv or set_env
 rename_remote_url - for git opt.
-git remote set-url origin https://michaeliyke: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@github.com/michaeliyke/alx-higher_level_programming.git
+git remote set-url origin url.git
 
 path - list all dirs in the system path
 list_path, path_dirs, dirs - aliases to the above

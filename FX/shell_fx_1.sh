@@ -62,13 +62,13 @@ function prompt_string()
 	PS1='\[\033[01;38;5;28m\]λ\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]\
 	\n\[\033[01;36m\]($CONDA_DEFAULT_ENV)\[\033[01;31m\] \$\[\033[00m\] '
 
-	PS1='\[\033[01;38;5;28m\]λ\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]\
+	PS1='\[\033[01;38;5;28m\]λ\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]$(parse_git_branch)\
 	\n\[\033[01;36m\]$([[ -n $CONDA_DEFAULT_ENV ]]&&echo "($CONDA_DEFAULT_ENV) ")\
 \[\033[01;31m\]\$\[\033[00m\] '
 
 	# output:
-	# λ:~	
-	# (base) $ 
+	# λ:~
+	#(base) $ 
 
 	# The window title
 	PS1="\[\e]0;MICHAEL IYKE (alx)   -   $(date '+%d/%m %H:%M')\a\]$PS1"

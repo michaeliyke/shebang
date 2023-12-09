@@ -11,3 +11,8 @@ fi
 	# gcc -Wall -pedantic -Wextra -Werror -L . 
 # }
 # gcc -c -fPIC *.c - compile all to object files
+
+function LD()
+{
+	echo "$LD_PRELOAD"
+}

@@ -4,5 +4,5 @@
 
 # The following code makes a script executable
 
-chmod +x $1
+chmod +x $*
 

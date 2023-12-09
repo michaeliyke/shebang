@@ -14,3 +14,11 @@ PROMPT_COMMAND='precmd'
 # Also restores ls color suppor
 PS1='λ:\w\n$ '
 # prompt_string
+
+if [[ -d ~/.local/anaconda3/envs/38 ]]; then
+	conda activate 38
+fi
+
+if [[ -d ~/.local/miniconda3/envs/38 ]]; then
+	conda activate 38
+fi
