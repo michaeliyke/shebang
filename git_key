@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Display the current Git Access Token key
-file=$bin/git_tokens
+file=$HOME/bin/git_tokens
 echo
-if [ -f $file ]; then
+if [ -f "$file" ]; then
 	echo
-	source $file
+	source "$file"
 	echo Done!
 	echo
 	exit 0
