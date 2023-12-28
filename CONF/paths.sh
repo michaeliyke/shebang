@@ -5,11 +5,14 @@ bin=${bin:-"$HOME/bin"}
 
 # DROP A PATH IN BELOW ARRAY
 cust_bin_paths=(
-	"$bin/bin" # bin inside of bin where proven tokens stand out
+	"$bin/core" # bin inside of bin where proven tokens stand out
 	"$bin/extras" # extras
 	"$bin/commons" # commons
 
 	# OTHERS BELOW
+	"$bin/bash" # commons
+	"$bin/c" # commons
+	"$bin/git" # commons
 
 )
 
