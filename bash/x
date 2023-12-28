@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+cust_bin_paths=(
+	"$bin/bin" # bin inside of bin where proven tokens stand out
+	"$bin/extras" # extras
+	"$bin/commons" # commons
+
+	# OTHERS BELOW
+
+)
+
+# To show the contets of the array you can uncomment below
+# for x in "${cust_bin_paths[@]}"; do echo "$x"; done
+
+# Below -s ensures single : each
+cust_bin_paths="${cust_bin_paths[@]}" | tr -s " " ":"
+
+export PATH="$cust_bin_paths:$PATH"

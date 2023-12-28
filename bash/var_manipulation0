@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# READ a file line by line the simple way
+
+username0="Odogwu"
+username0=""
+username0= #
+unset username0
+echo "username0 = ${username0-`whoami`}"

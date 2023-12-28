@@ -10,6 +10,8 @@ alias vgus="vg up && vg ssh"
 alias vgsu="vg up && vg ssh"
 alias vgs="vg ssh"
 
+alias {sch,shch,shchck,shchk,schk,schck,scheck}="shellcheck"
+
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 
 alias {reload,reload_path,reload_conf,reload_bash,reload_rc,reload_bashrc}='reload_configs'

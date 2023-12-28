@@ -5,7 +5,7 @@ function setaliases()
 	# open a book where aliases can be set
 	local aliases_file="$CONF/aliases.sh"
 
-	subl -w -n "$aliases_file"
+	subl -n "$aliases_file"
 }
 
 function setalias()
