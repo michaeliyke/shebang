@@ -7,3 +7,6 @@
 commit $*
 
 # Done
+
+# c -m "msg 4 1" -m "msg 4 2" -m "msg 4 3"
+# c -m "The msg here"
