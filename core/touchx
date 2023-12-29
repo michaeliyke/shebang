@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# The following code creates bash executable scripts
+# from all the provided arguments
+touch "$@"
+chmod +x "$@"
