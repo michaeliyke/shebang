@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+# rfe: Renaming file extensions
+#
+# 		rfe old_extension new_extnsion
+#
+# Example:
+# To rename all .gif files in current directory to .jpg
+# 	rfe gif jpg
+clear
+E_BAGARGS=65
+
+case $# in
+	# If we get less than 2 arguments, warn and quit
+	0|1)
+	echo "Usage: `echo ${0##*/}` old_extension new_extension"
+	exit $E_BAGARGS
+	;;
+esac
+
+# Function to rename all the files in current directory
+function rename_files()
+{
+	old_ext="$1"
+	new_ext="$2"
+	echo
+	for f in *.$old_ext # Traverse all files of the old type
+		do # Rename them to the new type
+		echo "Rename $f to ${f%$old_ext}$new_ext ... DONE!"
+		mv "$f" "${f%$old_ext}"$new_ext
+	done
+	echo
+}
+
+read -rep $'Reply \'YES\' to confirm.\nRename all '\
+"files in current folder into .$2 files? : " confirm
+
+confirm=$(echo "$confirm"|tr '[:lower:]' '[:upper:]')
+if [ "${#confirm}" -eq 3 ] && [ "$confirm" = "YES" ]
+	then
+	rename_files $1 $2
+	exit 0
+elif [ "${#confirm}" -eq 1 ] && [ "$confirm" = "Y" ]
+	then
+	rename_files $1 $2
+	exit 0
+else
+	echo "Aborting! .. ."
+	echo "No changes made to your files."
+	exit 0
+fi
