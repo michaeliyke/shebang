@@ -13,6 +13,7 @@ cust_bin_paths=(
 	"$bin/bash" # commons
 	"$bin/c" # commons
 	"$bin/git" # commons
+	"$bin/test" # commons
 
 )
 

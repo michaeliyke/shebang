@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# The first argument if the remote url
+remote=$1
+remote="https://michaeliyke:ghp_tId4nvZ2u@github.com/michaeliyke/shbg.git"
+# If remote does not contain https:// quit
+if [ -z "${remote/https:\/\//--}" ]
+# If remote does not contain github.com quit
+# If remote does not contain a username quit

@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+
+clear
+
+# The gt token from parsing a command output
+function gt_token()
+{
+	while IFS= read -r cmd
+		do
+			cmd="${cmd##+(' ')}" # Trim white spaces left
+			match="${cmd:0:1}" # Select the first character
+			result="" # Initialize result
+			# If cmd is not a comment, run it as a command, assign output to result
+			if [ ! "$match" = "#" ]; then result=$($cmd); fi
+
+			# If result contains a value, and the first 4 chars are ghp_
+			if [ -n "$result" ] && [ "${result:0:4}" = "ghp_" ]
+					then
+					# Trim off trailing comment and or space from result
+					result="${result%' '\#*}"
+					echo "$result" # ouput result and quit
+					return 0
+			fi
+	done < "$HOME/bin/git/git_tokens"
+}
+
+s="$1" # The first argument is a git repository url
+
+# If not useful information is provided, quit
+if [ -n "$s" ] || [ "${#s}" -lt 20 ]; then exit 1; fi
+
+# s="https://michaeliyke:ghp_tId4nvZ2u@github.com/michaeliyke/shbg.git"
+# Trim off everything before the github.com inclusive
+# By replacing it with --github.com
+x="${s/https:\/\/*github.com/--github.com}" # --github.com/michaeliyke/shbg.git
+
+# get the username by replacing the same match above with empty
+# This time we match upt to the / after github.com to reveal the user name
+user="${s/https:\/\/*github.com\//}"
+# Remove everything after the next / from the last command
+# This leaves only the username
+user="${user%/*}"
+
+# get the git token from a parser function
+token=$(gt_token)
+rmt="https://$user:$token@${x/--/}"
+
+echo "$rmt"
