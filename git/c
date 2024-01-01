@@ -15,7 +15,7 @@ for i in "${@}"
 		m_tag="$i" # If -m flag is pesent, then record it
 		s="$s $i"
 	else
-		s="$s '$i'"
+		s="$s \"$i\""
 	fi
 	done
 
@@ -28,7 +28,7 @@ if [ -z "$m_tag" ] # If no -m flag given
 	fi
 fi
 # echo "$s"
-git commit "$s"
+eval "git commit $s"
 # Done
 
 # c -m "msg 4 1" -m "msg 4 2" -m "msg 4 3"
