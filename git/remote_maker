@@ -1,9 +1,66 @@
 #!/usr/bin/env bash
+# THIS SCRIPTS USES THE remote COMMAND TO CONSTRUCT A GIT REMOTE URL THAT CAN
+# BE USED THE r COMMAND TO CHANGE THE REMOTE URL OF A git LOCAL REPOSITORY
+# E.g: https://michaeliyke:ghp_tId4nvZ2u@github.com/michaeliyke/shbg.git
 
-# The first argument if the remote url
-remote=$1
-remote="https://michaeliyke:ghp_tId4nvZ2u@github.com/michaeliyke/shbg.git"
-# If remote does not contain https:// quit
-if [ -z "${remote/https:\/\//--}" ]
-# If remote does not contain github.com quit
-# If remote does not contain a username quit
+clear
+
+# The first argument is the url url
+url=$1
+url="https://michaeliyke:ghp_tId4nvZ2u@github.com/michaeliyke/shbg.git"
+
+# If url does not contain https:// quit
+# Replace 'https://' with -- and test with replacing 'https://' with empty
+# But with -- manually appended
+# --michaeliyke:ghp_tId4nvZ2u@github.com/michaeliyke/shbg.git
+t="${url/#https:\/\//--}"
+if [ "$t" != "--${url/#https:\/\//}" ]
+	then
+	echo "Error: $url is not a valid URL"
+	exit 1
+fi
+
+# If url does not contain github.com quit
+# Replace '*github.com' with -- and test with replacing '*github.com' with empty
+# But with -- manually appended
+# --michaeliyke/shbg.git
+t2="$t"
+t="${t/#*github.com\//--}"
+if [ "$t" != "--${t2/#*github.com\//}" ]
+	then
+	echo "Error: $url is not a valid Git repository"
+	exit 1
+fi
+
+# If url does not contain a username quit
+# Username is already exposed.
+# Match from the end until the slash afer the username, replace with --
+# Replace the -- in front and at the back with empty and set as username
+# --michaeliyke--
+echo "$t"
+t2="${t/%\/*/--}"
+username="${t2//--/}"
+echo "$t2"
+if [ -z "${username}" ]
+	then
+	echo "Error: invalid repo username"
+	exit 1
+fi
+
+# If the url does not contain a repo name, quit
+# Username is already exposed.
+# Match from the beginning until the slash afer the username, replace w/ empty
+# This exposes the repo name directly along with the .git or a trailing slash.
+# In case the .git part is missing, there might be a trailing slash,
+# replace with empty
+# Replace the .git at the back with empty and set as repo_name
+# --___--
+t="${t/#*\//}"
+t="${t%\.git}"
+repo_name="${t:2}"
+if [ -z "$repo_name" ]
+	then
+	echo "Error: invalid repo name"
+	exit 1
+fi
+echo "$repo_name"
