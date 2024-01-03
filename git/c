@@ -3,33 +3,48 @@
 clear
 # Alias to the commit command
 
+# Git fn: checks if arg contains the -m flag as in -am or -m, etc
+function has_m_flag()
+{
+	[[ "$1" == -* && "$1" == *m* && "$1" != --* ]] && return 0
+	return 1
+}
+
 # git commit -m "git remote and remote_maker" -m "substring extraction" -m "pattern matching continues"
 s=""
 m_tag=""
 for i in "${@}"
 	do
-	# echo "$i"
-	if [ "${i:0:1}" = "-" ] && [[ "$i" = *m* ]] && (( "${#i}" < 6 )) &&
-			[ ! "${i:0:2}" = "--" ]
+	if has_m_flag "$i" # If -m flag is pesent, then record it
 		then
-		m_tag="$i" # If -m flag is pesent, then record it
+		m_tag="$i"
 		s="$s $i"
-	else
+	else # This is the actual string message
 		s="$s \"$i\""
 	fi
 	done
 
-
-if [ -z "$m_tag" ] # If no -m flag given
+if [[ -n "$m_tag" && -z "$s" ]] # If there's -m flag but message is missing
 	then
-	if [ -n "$s" ]; then s="-m $s" # if we have message text, simply add the flag
-	else # Message text does not exist either, reuse the last message
-		s=" -C HEAD"
-	fi
+	echo "commit message missing"
+	exit 1
 fi
-# echo "$s"
+
+if [[ -z "$m_tag" && -z "$s" ]] # If both -m flag and message are missing
+	then
+	# Message text does not exist either, reuse the last message
+	eval "git commit -C HEAD"
+	exit 0
+fi
+
+# If the first param doesn't contain -m flag but we have a message, add it
+if ! has_m_flag $1 && [[ -n "$s" ]] # Is there message
+	then
+	s="-m $s"
+fi
+
 eval "git commit $s"
-# Done
 
 # c -m "msg 4 1" -m "msg 4 2" -m "msg 4 3"
-# c -m "The msg here"
+# c "The msg here"
+# c The msg here
