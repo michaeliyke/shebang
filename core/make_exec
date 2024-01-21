@@ -4,5 +4,12 @@
 
 # The following code makes a script executable
 
-chmod +x $*
+# chmod +x $* # The old implementation
+for file in "${@}"
+do # Only make executable if they are not already executable
+	if [ ! -x "$file" ]; then
+		chmod +x "$file"
+		ls -n "$file" | tr -s " " " " | cut -d " " -f1,6-
+	fi
+done
 

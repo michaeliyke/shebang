@@ -36,8 +36,8 @@ Feb 1 11:00:00 [from:Google] [to:+16474951758] [flags:-1:0:-1:0:-1]
 # echo
 # echo "${#lines[@]}"
 
-for line in "${str[@]}"
-	do echo "$line"
-		break
+for line in "${str[@]}"; do
+	echo "$line"
+	break
 done
 

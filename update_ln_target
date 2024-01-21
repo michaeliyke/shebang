@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+# Update the link target of the ~/alx/project symbolic link
+# By simply recreating it
+
+# First be sure there is a folder target, else, quit with a complain
+folder_link=~/alx/project
+target=${1:?"Usage: `basename $0` 'your-target-folder'"}
+target=$(realpath "$target")
+if [ ! -d "$target" ]
+then
+	echo "Directory '$target' does not exist"
+	echo "Usage: `basename $0 target_folder` 'your-target-folder'"
+	exit 1
+fi
+
+# Remove the existing folder link if it exists
+if [ -e "$folder_link" ]
+then
+	rm "$folder_link"
+fi
+
+# check that rm command succeeded
+if [ -e "$folder_link" ]
+then
+	echo "Link deletion failed"
+	exit 1
+fi
+
+
+# Create a new link
+ln -s "$target" "$folder_link"
+
+# Check the operation was successful
+
+# Check that folder_link now exists
+if [ ! -e "$folder_link" ]; then # Doesn't exist yet.
+	echo "File creation failed"
+	exit 1
+fi
+
+# check folder_link is currently a symbolic link
+if [ ! -L "$folder_link" ]; then # it is not a link
+	echo "An error occured!: $folder_link is not a symbolic link"
+	echo "Please delete the $folder_link and rerun"
+	exit 1
+fi
+
+# At this point $folder_link is confirmed to be a true symbolic linke
+# Test if the target is as expected
+_target=$(readlink "$folder_link")
+if [ "$_target" != "$target" ]; then
+	echo "Error: The symbolic link points to the wrong target folder"
+	echo "$folder_link -> $_target"
+fi
+
+echo -e "\n Symbolic Link Successfully Created!\n"
+echo -e " $folder_link\n -> \n $target\n"
+
+exit 0

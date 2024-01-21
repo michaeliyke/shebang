@@ -2,7 +2,7 @@
 #+ PERSONAL TERMINAL ALIASES
 
 
-
+alias py="python"
 alias {vag,vgr,vagr}='valgrind'
 alias vg=vagrant
 alias vgu="vg up"

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Runs an SQL script name supplied as an argument
+if [ -f $1 ]
+then
+	cat "$1" | sudo mysql -p hbtn_0c_0
+fi
