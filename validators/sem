@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#+ Script to run the semstandard JavaScript validator tool
+
+clear
+
+if [ $# = 0 ]; then
+	semistandard *
+else
+	semistandard $@
+fi
