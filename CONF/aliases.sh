@@ -25,3 +25,4 @@ alias ls='ls -CF'
 alias l='git log -1'
 alias ls='ls -AF'
 alias {pyc,pcs,codestyle,cs}="pycodestyle"
+alias {mk_exec,makeexec,mkexec,makexec,mk,mk_,mke,mk_e}="make_exec"

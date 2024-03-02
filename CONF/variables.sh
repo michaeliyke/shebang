@@ -20,7 +20,7 @@ VARIABLES=(
 	HBNB_MYSQL_PWD=hbnb_dev_pwd
 	HBNB_MYSQL_HOST=localhost
 	HBNB_MYSQL_DB=hbnb_dev_db
-	HBNB_ENV=test
+	HBNB_ENV=test___
 	HBNB_TYPE_STORAGE=db
 )
 
