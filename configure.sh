@@ -18,6 +18,7 @@ server {
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
 	server_name anexe.tech www.anexe.tech;
+	add_header  X-Served-By  "$HOSTNAME";
 
 	rewrite ^/redirect_me/?$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
 
