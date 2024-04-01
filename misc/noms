@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+echo
+echo "Names of unfarmilia people to be expected"
+echo "Agath: average height"
+echo "Success: tall, fleshy"
+echo "Wale: office"
+echo "Kelvin: office"
+
+tasks=$(cat <<EOF
+FOLLOWING ARE THE LIST OF TASKS WORKED IN THE BREAK
+These needs be synced in due time
+0. 0x03. AirBnB clone - Deploy static
+1. 0x0E. Web stack debugging #1
+2. 0x0D. Web stack debugging #0
+3. 0x0F. Load balancer (TASK 2 ONLY)
+4. 0x0C. Web server (Task 5 ONLY)
+6. 0x01. AirBnB clone - Web static
+7. 0x1D. C - Binary trees
+8. 
+
+EOF
+)
+
+printf "$tasks"
+

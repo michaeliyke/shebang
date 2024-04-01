@@ -47,3 +47,7 @@ if in_bashrc "export PATH=$bn:";
 		echo "export PATH=$bn:$PATH" >> $rc
 	fi
 echo
+
+# Reload .bashrc to make above settings take effect immediatley
+reload
+

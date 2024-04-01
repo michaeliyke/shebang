@@ -18,6 +18,7 @@ cust_bin_paths=(
 	"$bin/AirBnB_clone/automation" # commons
 	"$bin/configs/W3C-Validator" # commons
 	"$bin/validators" # commons
+	"$bin/misc" # commons
 
 )
 
