@@ -8,6 +8,15 @@ function setaliases()
 	subl -n "$aliases_file"
 }
 
+# Opens up the paths configuration file for editing
+function setpaths()
+{
+	# open a book where paths can be set
+	local paths_file="$CONF/paths.sh"
+
+	subl -n "$paths_file"
+}
+
 function setalias()
 {
 	local alias_name=$1
@@ -68,7 +77,7 @@ function prompt_string()
 
 	# output:
 	# λ:~
-	#(base) $ 
+	#(base) $
 
 	# The window title
 	PS1="\[\e]0;MICHAEL IYKE (alx)   -   $(date '+%d/%m %H:%M')\a\]$PS1"

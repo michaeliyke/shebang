@@ -16,6 +16,7 @@ cust_bin_paths=(
 	"$bin/test" # commons
 	"$bin/AirBnB_clone" # commons
 	"$bin/AirBnB_clone/automation" # commons
+	"$bin/configs" # commons
 	"$bin/configs/W3C-Validator" # commons
 	"$bin/validators" # commons
 	"$bin/misc" # commons

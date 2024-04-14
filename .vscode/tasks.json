@@ -12,7 +12,10 @@
 				"-Wextra",
 				"-pedantic",
 				"-std=c89",
-        "${fileDirname}/stack-static.c",
+		"${fileDirname}/main.c",
+		"${fileDirname}/skiplist.c",
+		"${fileDirname}/106-linear_skip.c",
+		"-lm",
         "-o",
         "${fileDirname}/a.out"
       ],

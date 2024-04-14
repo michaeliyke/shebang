@@ -16,6 +16,7 @@ alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 
 alias {reload,reload_path,reload_conf,reload_bash,reload_rc,reload_bashrc}='reload_configs'
 alias aliases='setaliases'
+alias paths='setpaths'
 alias python='python3'
 alias {terminal,term,shell,cmd}='gnome-terminal'
 # some more ls aliases
