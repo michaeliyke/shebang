@@ -27,3 +27,6 @@ alias l='git log -1'
 alias ls='ls -AF'
 alias {pyc,pcs,codestyle,cs}="pycodestyle"
 alias {mk_exec,makeexec,mkexec,makexec,mk,mk_,mke,mk_e}="make_exec"
+
+# The tldr command for summarizing the contents of man
+alias {vl,verylong,long,very,vldr,dr,toolong,tl,toolongdidntread}="tldr"
