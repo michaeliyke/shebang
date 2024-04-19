@@ -2,7 +2,7 @@
 # STEPS TO INSTALL THE BIN IN A SYSTEM
 # BACKUP OF REPLACED FILES ARE MADE WITH _bak close to their names for safety
 
-local conf=~/bin/configs/_bash_
+conf=~/bin/configs/_bash_
 
 # If the bin isn't cloned yet, quit
 if [ ! -d "$conf" ]; then
@@ -55,5 +55,5 @@ else
 fi
 
 # Fire up a new bash session let's see
-
+unset conf
 bash
