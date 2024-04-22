@@ -5,7 +5,17 @@ function setaliases()
 	# open a book where aliases can be set
 	local aliases_file="$CONF/aliases.sh"
 
-	subl -n "$aliases_file"
+	subl -a "$aliases_file:1" # Open file in currently opened window,jump to line 1
+	# subl -n "$aliases_file"
+}
+
+function setvariables()
+{
+	# open a book where environment variables can be set
+	local variables_file="$CONF/variables.sh"
+
+	subl -a "$variables_file:1" # Open file in currently opened window,jump to line 1
+	# subl -n "$variables_file"
 }
 
 # Opens up the paths configuration file for editing
@@ -14,7 +24,8 @@ function setpaths()
 	# open a book where paths can be set
 	local paths_file="$CONF/paths.sh"
 
-	subl -n "$paths_file"
+	subl -a "$paths_file:1" # Open file in currently opened window,jump to line 1
+	# subl -n "$paths_file"
 }
 
 function setalias()
