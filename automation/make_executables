@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Following command will make all python files executable
+# It is recursive and works from the parent directory down to
+# the deepest directory
+
+# clear
+
+# cd ..
+# find . -type f -name "*.py" -exec chmod +x {} +
+
+while IFS= read -r -d "" file; do
+	if [ ! -x "$file" ]; then # if file is not executable make it executable
+		chmod +x "$file"
+		ls -n "$file" | tr -s " " " " | cut -d " " -f1,6-
+	fi
+done < <(find . -type f -name "*.py" -print0)
+# Print null-terminated i.e \0 terminated (-print0) outputs
+# use process substitution to direct each output to the done < part
+# of the while loop for processing

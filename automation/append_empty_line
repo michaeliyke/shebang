@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+# This script recursivley checks the files in a directly for multiple
+# or absence of a trailing newline character.
+# File ends up with only a single newline character at the end of the file
+
+#!/bin/bash
+
+# Function to check if a file ends with a single newline
+check_newline() {
+  local file="$1"
+  # Check if file is empty (uses stat command)
+  if [[ ! -s "$file" ]]; then
+    # Empty files don't need a newline character
+    return 0
+  fi
+  # Get the last character using tail -c 1
+  last_char=$(tail -c 1 "$file")
+  # Check if last character is a newline and there's no additional data
+  if [[ "$last_char" == $'\n' ]] && [[ $? -eq 0 ]]; then
+    return 0  # File ends with a single newline
+  else
+    return 1  # File doesn't end with a single newline or has extra data
+  fi
+}
+
+# Function to fix newline characters in a file
+fix_newline() {
+  local file="$1"
+  # Read the entire file content
+  content=$(cat "$file")
+  # Fix newline using string manipulation
+  fixed_content=$(echo "$content" | tr -s '\r\n' '\n')  # Convert all \r\n to single \n
+  # Remove multiple trailing newlines (if any)
+  fixed_content=$(echo "$fixed_content" | sed -e :a -e '/^\n*$/{$d;N;ba' -e '}')
+  # Ensure a single newline at the end if none exists
+  if [[ ! "$fixed_content" =~ \n$ ]]; then
+    fixed_content="$fixed_content\n"
+  fi
+  # Write the fixed content back to the file (use temporary file for safety)
+  tempfile="/tmp/$(basename "$file").fixed"
+  echo -e "$fixed_content" > "$tempfile"
+  mv "$tempfile" "$file"
+}
+
+# Function to process files recursively
+process_files() {
+  local dir="$1"
+  # Loop through all files and subdirectories in the current directory
+  for entry in "$dir"/*; do
+    if [[ -f "$entry" ]]; then
+      # Check the file's newline using the check_newline function
+      if ! check_newline "$entry"; then
+        echo "Fixing newline characters in '$entry'..."
+        fix_newline "$entry"
+      fi
+    elif [[ -d "$entry" && "$entry" != "." && "$entry" != ".." ]]; then
+      # Recursively process subdirectories (excluding . and ..)
+      process_files "$entry"
+    fi
+  done
+}
+
+# Get the starting directory from the first argument
+start_dir="${1:-.}"
+
+# Check if the directory exists
+if [[ ! -d "$start_dir" ]]; then
+  echo "Error: Directory '$start_dir' does not exist."
+  exit 1
+fi
+
+# Start processing files from the starting directory
+process_files "$start_dir"
+
+echo "Finished checking and fixing newline characters in files."

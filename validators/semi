@@ -4,7 +4,7 @@
 clear
 
 if [ $# = 0 ]; then
-	semistandard *
+	semistandard * --global $ 
 else
-	semistandard $@
+	semistandard $@ --global $ 
 fi

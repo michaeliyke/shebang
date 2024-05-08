@@ -1,8 +1,17 @@
 #!/bin/bash
-
+# This script audits a commit by listing the folowing details:
+# hash, date, author, commit_message, list_of_modifed_files_with_status
+# status: M=Modified, A=Added, D=Deleted, R=Renamed, C=Copied,
+# U=Unmerged, T=Type Changed, X=Unknown status, B=Broken file
    clear
 
-git log --pretty=format:"%h    %ar    %an"
+hash="$1"
+if [ "${#hash}" -lt 4 ]; then
+	echo "Usage: `basename $0` <commit_hash>"
+	exit 1
+fi
+
+git show --pretty=format:"%h    %ar    %an    %s" --name-status "$hash"
 # git log --pretty=format:%h:%an:%s
 # Hash, Author name and commit message
 # git log --date=short --pretty=format:%h:%ad

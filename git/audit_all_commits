@@ -1,8 +1,11 @@
 #!/bin/bash
-
+# This script audits all commits by listing the folowing details for each:
+# hash, date, author, commit_message, list_of_modifed_files_with_status
+# status: M=Modified, A=Added, D=Deleted, R=Renamed, C=Copied,
+# U=Unmerged, T=Type Changed, X=Unknown status, B=Broken file
    clear
 
-git log --pretty=format:"%h    %ar    %an"
+git show --pretty=format:"%h    %ar    %an    %s" --name-status
 # git log --pretty=format:%h:%an:%s
 # Hash, Author name and commit message
 # git log --date=short --pretty=format:%h:%ad
@@ -18,3 +21,6 @@ git log --pretty=format:"%h    %ar    %an"
 # hash, date, author, commit message, and the list of files changed with their status
 # git show --pretty=format:"%h    %ar    %an    %s" --name-status <commit-hash>
 # Same as above but for one single commit
+
+# git log -1 --pretty=format:"%ar %an %B" 0-hbnb.py
+# date, author, message for a file

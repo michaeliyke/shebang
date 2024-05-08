@@ -16,18 +16,19 @@ VARIABLES=(
 	PYNGUIN_DANGER_AWARE="YES"
 
 	# FOR HBNB CLONE
-	HBNB_MYSQL_USER=hbnb_dev
-	HBNB_MYSQL_PWD=hbnb_dev_pwd
-	HBNB_MYSQL_HOST=localhost
-	HBNB_MYSQL_DB=hbnb_dev_db
-	HBNB_ENV=test___
-	HBNB_TYPE_STORAGE=db
+	_HBNB_MYSQL_USER=hbnb_dev
+	_HBNB_MYSQL_PWD=hbnb_dev_pwd
+	_HBNB_MYSQL_HOST=localhost
+	_HBNB_MYSQL_DB=hbnb_dev_db
+	_HBNB_ENV=test___
+	_HBNB_TYPE_STORAGE=db
 	web01="54.167.197.163"
 	web02="52.91.120.251"
 	lb="54.88.115.160"
 	lb01="54.88.115.160"
-	FLASK_APP="2-c_route.py"
-	FLASK_DEBUG="1"
+	_FLASK_APP="2-c_route.py"
+	_FLASK_DEBUG="1"
+	NODE_PATH=/usr/lib/node_modules
 )
 
 # LOAD THE VARIABLES ABOVE INTO THE ENVIRONMENT

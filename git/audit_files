@@ -1,0 +1,39 @@
+#!/bin/bash
+# This script audits all commits by listing the folowing details for each:
+# hash, date, author, commit_message, list_of_modifed_files_with_status
+# status: M=Modified, A=Added, D=Deleted, R=Renamed, C=Copied,
+# U=Unmerged, T=Type Changed, X=Unknown status, B=Broken file
+   clear
+
+# git log -1 --pretty=format:"%ar %an %B" 0-hbnb.py
+# date, author, message for a file
+for file in * ; do
+	# Check if file is tracked by git
+	count=$(git ls-files "$file" | wc -l)
+	if [ $count -gt 0 ]; then # It is tracked by git
+		printf "$file "
+		output=$(git log -1 --pretty=format:"%h  %ar  %an  %B")
+		edit=$(echo "$output" | cut -c -65)
+		echo "$edit..."
+		# echo "$output"
+	fi
+done
+
+# git log --pretty=format:%h:%an:%s
+# Hash, Author name and commit message
+# git log --date=short --pretty=format:%h:%ad
+# Hash, and Author date short
+# git log --pretty=format:%h:%ar
+# Hash, Author date relative like 2 minutes go etc
+# git log --date=short --pretty=format:%h:%cd
+# Hash and commit date
+# https://www.git-scm.com/docs/git-log
+# https://stackoverflow.com/questions/7853332/how-to-change-git-log-date-formats
+
+# git log --pretty=format:"%h    %ar    %an    %s" --name-status
+# hash, date, author, commit message, and the list of files changed with their status
+# git show --pretty=format:"%h    %ar    %an    %s" --name-status <commit-hash>
+# Same as above but for one single commit
+
+# git log -1 --pretty=format:"%ar %an %B" 0-hbnb.py
+# date, author, message for a file
