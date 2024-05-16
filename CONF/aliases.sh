@@ -26,8 +26,15 @@ alias la='ls -A'
 alias ls='ls -CF'
 alias l='git log -1'
 alias ls='ls -AF'
+
+
+alias mux='tmux' # Terminal Multiplexer
+alias mx='tmux' # Terminal Multiplexer
+
+
 alias {pyc,pcs,codestyle,cs}="pycodestyle"
 alias {mk_exec,makeexec,mkexec,makexec,mk,mk_,mke,mk_e}="make_exec"
 
 # The tldr command for summarizing the contents of man
 alias {vl,verylong,long,very,vldr,dr,toolong,tl,toolongdidntread}="tldr"
+alias 'alx-system_engineering-devops'='cd -P ~/bin/alx_devops'
