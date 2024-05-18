@@ -3,6 +3,15 @@ aliases=(
 	"cls=clear"
 	"where=which"
 	"md=mkdir"
+	"cls=clear"
+	"where=which"
+	"md=mkdir"
+	"a=git add"
+	"c=git commit -m"
+	"s=git status"
+	"push=git push"
+	"pull=git pull"
+	"r=git remote"
 )
 
 # Check if a query has a match within the user bashrc file
