@@ -8,6 +8,8 @@ cust_bin_paths=(
 	"$bin/core" # bin inside of bin where proven tokens stand out
 	"$bin/extras" # extras
 	"$bin/commons" # commons
+	"$bin/commons/logging" # commons
+	"$bin/commons/server" # commons
 
 	# OTHERS BELOW
 	"$bin/bash" # commons

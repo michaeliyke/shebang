@@ -3,3 +3,8 @@ sudo mysql -p hbnb_dev_db < truc.sql # execute the trunc.sql file
 sudo mysql -p hbnb_dev_db < states.sql # Autopopulate the states table data
 sudo mysql -p -D hbnb_dev_db -e "describe cities"
 sudo mysql -p -D hbnb_dev_db
+mysqldump -u root -p --no-data BMM_db > ~/bin/db/BMM_db.sql
+
+# select constraint_catalog, constraint_name, table_name, constraint_type FROM
+#  information_schema.table_constraints where constraint_schema = "BMM_db" and
+#  constraint_type = "FOREIGN KEY";

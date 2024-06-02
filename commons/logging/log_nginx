@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+# This script is used to check the logs of the nginx server
+# It will check the logs of the nginx server and will display the logs of the last 10 minutes
+# code
+# sudo tail -n 100 /var/log/nginx/access.log | grep "$(date +"%d/%b/%Y:%H:%M" --date="10 minutes ago")" | less
+sudo tail -f /var/log/nginx/error.log
