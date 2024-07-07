@@ -4,6 +4,6 @@
 
 # Alias to the init command
 
-init
+git init
 
 # Done

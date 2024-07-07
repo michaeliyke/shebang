@@ -13,6 +13,7 @@ alias vgs="vg ssh"
 alias {sch,shch,shchck,shchk,schk,schck,scheck}="shellcheck"
 
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+alias {sp,st,spt}='speedtest'
 
 alias {reload,reload_path,reload_conf,reload_bash,reload_rc,reload_bashrc}='reload_configs'
 alias aliases='setaliases'
@@ -20,6 +21,8 @@ alias variables='setvariables'
 alias paths='setpaths'
 alias python='python3'
 alias {terminal,term,shell,cmd}='gnome-terminal'
+alias es='eslint *.js --fix'
+alias esl="eslint"
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -33,6 +36,7 @@ alias mx='tmux' # Terminal Multiplexer
 
 
 alias {pyc,pcs,codestyle,cs}="pycodestyle"
+alias {my,mp,myp}="mypy"
 alias {mk_exec,makeexec,mkexec,makexec,mk,mk_,mke,mk_e}="make_exec"
 
 # The tldr command for summarizing the contents of man

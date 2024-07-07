@@ -5,3 +5,8 @@ then
 	cat "$1" | sudo mysql -p
 
 fi
+
+# MySQL command to count items in a DB
+# sudo mysql --database BMM_db -p -e "describe tags;"
+# sudo mysql -p -e "SELECT COUNT(*) FROM $1.$2;"
+# sudo mysql --database BMM_db -p -e "select name from tags;"
