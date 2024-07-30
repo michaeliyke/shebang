@@ -1,2 +1,4 @@
 #!/usr/bin/bash
-npm run dev "$@"
+# npm run dev "$@"
+cat $(realpath $1) | mysql -uroot -p holberton
+

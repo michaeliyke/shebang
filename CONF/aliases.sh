@@ -41,4 +41,17 @@ alias {mk_exec,makeexec,mkexec,makexec,mk,mk_,mke,mk_e}="make_exec"
 
 # The tldr command for summarizing the contents of man
 alias {vl,verylong,long,very,vldr,dr,toolong,tl,toolongdidntread}="tldr"
-alias 'alx-system_engineering-devops'='cd -P ~/bin/alx_devops'
+
+# Alx Directory Space
+alias 'alx'='cd ~/alx/school/'
+alias 'alx-backend'='cd ~/alx/school/alx-backend'
+alias 'alx-backend-javascript'='cd ~/alx/school/alx-backend-javascript'
+alias 'alx-backend-python'='cd ~/alx/school/alx-backend-python'
+alias 'alx-backend-storage'='cd ~/alx/school/alx-backend-storage'
+alias 'alx-interview'='cd ~/alx/school/alx-interview'
+alias 'alx-higher_level_programming'='cd ~/alx/school/higher_level_programming'
+alias 'alx-low_level_programming'='cd ~/alx/school/low_level_programming'
+alias 'alx-other'='cd ~/alx/school/other'
+alias 'alx-projects'='cd ~/alx/school/projects'
+alias 'alx-system_engineering-devops'='cd ~/alx/school/system_engineering-devops'
+alias 'bins'='cd ~/bin'
