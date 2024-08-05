@@ -82,17 +82,23 @@ function is_env_active()
 # This function returns the right virtual environment to activate
 # If the python virtual environment is active, it returns the name of the virtual environment
 # else, it returns the string of $CONDA_DEFAULT_ENV
+# NB: status code is returned by 'return' while return value is returned by 'echo'
 function detect_env() {
 	# Check if a venv or virtualenv env is active
     if [[ -n "$VIRTUAL_ENV" && -d "$VIRTUAL_ENV" ]]; then
-        basename "$VIRTUAL_ENV"
-	# Check if a conda env is active
-    elif [[ -n "$CONDA_DEFAULT_ENV" ]]; then
-        echo "$CONDA_DEFAULT_ENV"
-    else
-        # No env is active
-        echo ""
+        my_env=$(basename "$VIRTUAL_ENV")
+		echo "$my_env"
+		return 0
     fi
+
+	# Check if a conda env is active
+	if [[ -n "$CONDA_DEFAULT_ENV" ]]; then
+        echo "$CONDA_DEFAULT_ENV"
+		return 0
+    fi
+	# No env is active
+	echo ""
+	return 1
 }
 
 
