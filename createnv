@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Create a new virtual environment for the project in current directory
+# Usage: createnv [env_name]
+# If no env_name is provided, it will use the project name as the env_name
+# If the virtual environment already exists, it won't be recreated
+
+# Get the project name
+project_name=$(basename "$(pwd)")
+
+# Get the virtual environment name
+env_name=${1:-$project_name}
+
+# Change of plan. Default env_name is now 'env'
+env_name=${1:-env}
+
+# Check if the virtual environment already exists
+if [ -d "$env_name" ]; then
+	echo "Virtual environment '$env_name' already exists"
+	exit 1
+fi
+
+# Create the virtual environment
+python3 -m venv "$env_name"
+
+echo "Virtual environment '$env_name' created"

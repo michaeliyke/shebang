@@ -69,6 +69,32 @@ function precmd()
 		fi
 }
 
+# Function to detect if python virtual environment is active
+function is_env_active()
+{
+	# Check if the current directory is a git repository
+	if git rev-parse --is-inside-work-tree &>/dev/null; then
+		# Parse the git branch name
+		git branch 2>/dev/null | sed -n '/^\*/s/^\* //p'
+	fi
+}
+
+# This function returns the right virtual environment to activate
+# If the python virtual environment is active, it returns the name of the virtual environment
+# else, it returns the string of $CONDA_DEFAULT_ENV
+function detect_env() {
+	# Check if a venv or virtualenv env is active
+    if [[ -n "$VIRTUAL_ENV" && -d "$VIRTUAL_ENV" ]]; then
+        basename "$VIRTUAL_ENV"
+	# Check if a conda env is active
+    elif [[ -n "$CONDA_DEFAULT_ENV" ]]; then
+        echo "$CONDA_DEFAULT_ENV"
+    else
+        # No env is active
+        echo ""
+    fi
+}
+
 
 
 function prompt_string()
@@ -79,11 +105,14 @@ function prompt_string()
 	# PS1='\[\033[01;38;5;28m\]λ\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]\
 	# \n($CONDA_DEFAULT_ENV)\$\[\033[00m\] '
 
+	# The prompt string to include the python virtual environment name
+	my_env=$(detect_env)
+
 	PS1='\[\033[01;38;5;28m\]λ\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]\
 	\n\[\033[01;36m\]($CONDA_DEFAULT_ENV)\[\033[01;31m\] \$\[\033[00m\] '
 
 	PS1='\[\033[01;38;5;28m\]λ\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]$(parse_git_branch)\
-	\n\[\033[01;36m\]$([[ -n $CONDA_DEFAULT_ENV ]]&&echo "($CONDA_DEFAULT_ENV) ")\
+	\n\[\033[01;36m\]$([[ -n $my_env ]]&&echo "($my_env) ")\
 \[\033[01;31m\]\$\[\033[00m\] '
 
 	# output:
@@ -95,6 +124,7 @@ function prompt_string()
 	# Restore ls color support
 	ls_color
 }
+
 # PS1+=\" [$ {cyan}]<$ ($CONDA_DEFAULT_ENV)> \"
 function ls_color()
 {
