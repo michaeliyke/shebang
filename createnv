@@ -23,3 +23,29 @@ fi
 python3 -m venv "$env_name"
 
 echo "Virtual environment '$env_name' created"
+
+# Create the conditional variable for the .gitignore file
+# If the .gitignore file is in the parent directory, use that instead
+gitignore=".gitignore"
+if [ -f "../.gitignore" ]; then
+	gitignore="../.gitignore"
+fi
+
+# If the .gitignore file doesn't exist, create it
+if [ ! -f "$gitignore" ]; then
+	touch "$gitignore"
+	echo "Created .gitignore file in current directory"
+fi
+
+# Adding the env directory to .gitignore if not exists
+# grep -qE "^v?(env)$" .gitignore || echo "env" >> .gitignore
+if ! grep -q "^$env_name$" "$gitignore"; then
+	echo "$env_name" >> "$gitignore"
+	echo "Added '$env_name' to the .gitignore file"
+else
+	echo "'$env_name' already exists in the .gitignore file"
+fi
+
+# Make a hard link to the activate script in current directory
+ln "$env_name/bin/activate" activate
+echo "Created hard link 'activate' in current directory"
