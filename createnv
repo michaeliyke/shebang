@@ -37,9 +37,9 @@ if [ ! -f "$gitignore" ]; then
 	echo "Created .gitignore file in current directory"
 fi
 
-# Adding the env directory to .gitignore if not exists
 # grep -qE "^v?(env)$" .gitignore || echo "env" >> .gitignore
-if ! grep -q "^$env_name$" "$gitignore"; then
+# Adding the env directory to .gitignore if not exists
+if ! grep -q "^${env_name}$" "$gitignore"; then
 	echo "$env_name" >> "$gitignore"
 	echo "Added '$env_name' to the .gitignore file"
 else
