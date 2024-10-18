@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# List all non-documented python modules in a project
+
+dir_=`dirname $0`
+path="$dir_/module_doc_.py"
+python "$path"
+

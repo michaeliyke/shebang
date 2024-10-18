@@ -21,8 +21,8 @@ done
 
 # call compile with c files and
 # call program with program arguments
-gcc -Wall -Wextra -pedantic -Werror -std=gnu89 -g "${comp_args[@]}" -o a.out
-
+# gcc -Wall -Wextra -pedantic -Werror -std=gnu89 -g "${comp_args[@]}" -o a.out
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 "${comp_args[@]}" -lm -o a.out
 # Execute compiled prgram only if compilation was successful
 compile_status=$(echo $?)
 

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#+ Run a local script against a remote machine.
+#+ You must have been able to connect with this remote earlier
+
+#+ Examples
+#+ run_on_remote web02 ~/bin/install_regular.sh
+#+ run_on_remote ubuntu@54.237.104.249 configure.sh 
+
+REMOTE=$1
+LOCAL_SCRIPT=$2
+ssh "$REMOTE" 'sudo bash -s' < "$LOCAL_SCRIPT"
+
+

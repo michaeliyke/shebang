@@ -1,0 +1,29 @@
+#!/bin/bash
+# This script audits a commit by listing the folowing details:
+# hash, date, author, commit_message, list_of_modifed_files_with_status
+# status: M=Modified, A=Added, D=Deleted, R=Renamed, C=Copied,
+# U=Unmerged, T=Type Changed, X=Unknown status, B=Broken file
+   clear
+
+hash="$1"
+if [ "${#hash}" -lt 4 ]; then
+	echo "Usage: `basename $0` <commit_hash>"
+	exit 1
+fi
+
+git show --pretty=format:"%h    %ar    %an    %s" --name-status "$hash"
+# git log --pretty=format:%h:%an:%s
+# Hash, Author name and commit message
+# git log --date=short --pretty=format:%h:%ad
+# Hash, and Author date short
+# git log --pretty=format:%h:%ar
+# Hash, Author date relative like 2 minutes go etc
+# git log --date=short --pretty=format:%h:%cd
+# Hash and commit date
+# https://www.git-scm.com/docs/git-log
+# https://stackoverflow.com/questions/7853332/how-to-change-git-log-date-formats
+
+# git log --pretty=format:"%h    %ar    %an    %s" --name-status
+# hash, date, author, commit message, and the list of files changed with their status
+# git show --pretty=format:"%h    %ar    %an    %s" --name-status <commit-hash>
+# Same as above but for one single commit

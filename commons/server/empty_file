@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+# Script to empty a file of its contents completely
+file=$1
+if [ -f "$file" ]; then
+	echo "" | tee "$file" > /dev/null
+	vi "$file"
+fi
+

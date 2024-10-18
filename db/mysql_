@@ -20,3 +20,14 @@ sudo mysql
 # on *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
 # GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
 # FLUSH PRIVILEGES;
+# GRANT REPLICATION CLIENT ON *.* TO 'holberton_user'@'localhost'
+CREATE TABLE nexus6 ( id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100));
+insert into nexus6 (name) values("Leon");
+create database if not exists tyrell_corp;
+CREATE USER 'Ann'@'localhost' IDENTIFIED WITH my_custom_auth BY 'abc';
+CREATE USER 'holberton_user'@'localhost' IDENTIFIED WITH authentication_plugin BY 'projectcorrection280hbtn';
+CREATE TABLE nexus6 ( id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100));
+
+ GRANT SELECT on tyrell_corp.nexus6 TO 'holberton_user'@'localhost' WITH GRANT OPTION;
+
+ sudo mysql -p -e "show create table hbnb_dev_db.states"

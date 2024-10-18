@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# List all python files in this project
+
+files=()
+while IFS= read -r -d "" fil
+do
+ files+=("$fil")
+done < <(find . -type f -name "*.py" -print0)
+
+
+for f in ${files[@]}
+	do echo "$f" >> python_files.txt
+done

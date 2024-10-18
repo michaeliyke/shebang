@@ -1,7 +1,7 @@
 #!/bin/bash
-  
+
    clear
-  
+
 git log --pretty=format:"%h    %ar    %an"
 # git log --pretty=format:%h:%an:%s
 # Hash, Author name and commit message
@@ -13,4 +13,8 @@ git log --pretty=format:"%h    %ar    %an"
 # Hash and commit date
 # https://www.git-scm.com/docs/git-log
 # https://stackoverflow.com/questions/7853332/how-to-change-git-log-date-formats
- 
+
+# git log --pretty=format:"%h    %ar    %an    %s" --name-status
+# hash, date, author, commit message, and the list of files changed with their status
+# git show --pretty=format:"%h    %ar    %an    %s" --name-status <commit-hash>
+# Same as above but for one single commit

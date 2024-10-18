@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script prints the author of the file passed as argument
+if [ $# -ne 1 ]; then
+	echo "Usage: $(basename $0) <file>"
+	exit 1
+fi
+git log --follow --format=%an $1
+# git log --follow --format=%an 100-binary_trees_ancestor.c
