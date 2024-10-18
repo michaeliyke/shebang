@@ -1,5 +1,24 @@
 #!/usr/bin/env bash
 
+# Sets the remote a git repo.
+# It runs git remote -v and parses the output to get the repo url
+# This url is then reconstructed with the auth token included
+# If $1 is provided, it is used instead with errors if its invalid
+# If $1 is unset and and the command could not obtain a valid url
+# -- If it is no a valid git repo, indicates
+# -- If it's indeed a valid repo but the remote url isn't set, indicates
+# Anything else goes into the reconstruction provided it is a string
+
+# #################################################################################
+# git remote remove origin  # Remove the origin remote tracking                   #
+# git remote add --fetch --tags --master master origin https://name:SHA-1@repo.git#
+###################################################################################
+# -m|--master: sets the master branch explicitely                                 #
+# -f|--fetch: run git fetch <name> immediately                                     #
+# To create and update remote-tracking branches <name>/<branch>                    #
+# --tags: git fetch <name> imports every tag from the remote repository.           #
+# --no-tags: git fetch <name> does not import tags from the remote repo            #
+####################################################################################
 
 # clear
 

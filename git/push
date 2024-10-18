@@ -4,6 +4,6 @@
 
 # Git push
 
-git push
+git push "$@"
 
 # Done!
