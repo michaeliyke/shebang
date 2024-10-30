@@ -1,0 +1,9 @@
+#!/bin/bash
+
+COMMIT="$1"
+
+if [ -z "$COMMIT" ]; then
+  COMMIT="HEAD"
+fi
+
+git show "$COMMIT" --no-patch --pretty=format:"Username: %cn%nEmail: %ce%nName: %an"

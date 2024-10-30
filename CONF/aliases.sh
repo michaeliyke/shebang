@@ -44,11 +44,13 @@ alias {vl,verylong,long,very,vldr,dr,toolong,tl,toolongdidntread}="tldr"
 
 # Alx Directory Space
 alias 'alx'='cd ~/alx/school/'
+alias 'e-blog'='cd ~/alx/school/e-blog'
 alias 'alx-backend-user-data'='cd ~/alx/school/alx-backend-user-data'
 alias 'alx-backend'='cd ~/alx/school/alx-backend'
 alias 'alx-backend-javascript'='cd ~/alx/school/alx-backend-javascript'
 alias 'alx-backend-python'='cd ~/alx/school/alx-backend-python'
 alias 'alx-backend-storage'='cd ~/alx/school/alx-backend-storage'
+alias 'alx-files_manager'='cd ~/alx/school/alx-files_manager'
 alias 'alx-interview'='cd ~/alx/school/alx-interview'
 alias 'alx-higher_level_programming'='cd ~/alx/school/higher_level_programming'
 alias 'alx-low_level_programming'='cd ~/alx/school/low_level_programming'
