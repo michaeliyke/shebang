@@ -9,6 +9,7 @@ alias vgu="vg up"
 alias vgus="vg up && vg ssh"
 alias vgsu="vg up && vg ssh"
 alias vgs="vg ssh"
+alias start="open"
 
 alias {sch,shch,shchck,shchk,schk,schck,scheck}="shellcheck"
 
