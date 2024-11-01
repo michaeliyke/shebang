@@ -2,6 +2,8 @@
 #+ PERSONAL TERMINAL ALIASES
 
 
+alias {activate_env,env_activate,my_env,activatenv,envactivate}="source ~/bin/env_activate_script.sh"
+
 alias py="python"
 alias {vag,vgr,vagr}='valgrind'
 alias vg=vagrant

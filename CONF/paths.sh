@@ -23,6 +23,11 @@ cust_bin_paths=(
 	"$bin/configs/W3C-Validator" # commons
 	"$bin/validators" # commons
 	"$bin/misc" # commons
+	"$bin/langs/" # commons
+	"$bin/langs/python" # commons
+	"$bin/langs/c" # commons
+	"$bin/langs/go" # commons
+	"$bin/langs/node" # commons
 
 )
 
