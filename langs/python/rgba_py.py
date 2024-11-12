@@ -2,6 +2,7 @@
 import re
 import sys
 import os
+# Source: https://chatgpt.com/share/67330450-e484-8005-9253-fcbccf9d992b
 
 
 def hex_to_rgba(hex_str):
