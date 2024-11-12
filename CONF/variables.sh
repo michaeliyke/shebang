@@ -12,13 +12,10 @@ source ~/bin/ACCESS_KEYS/PRIVATE_VARS.sh
 VARIABLES=(
 	bashrc_path=~/.bashrc
 	test_putchar=$michael/test_putchar
-	CURRENT_WORKING_DIR= # PATH="$HOME/bin:$URRENT_WORKING_DIR"
-	PYFILE=main.py
 	PYCODE="print('Alx school')"
 	PYNGUIN_DANGER_AWARE="YES"
 
 	
-	_FLASK_APP="2-c_route.py"
 	_FLASK_DEBUG="1"
 	NODE_PATH=/usr/lib/node_modules
 )

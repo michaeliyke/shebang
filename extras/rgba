@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+#+ This script will convert a css hex color to equivalent rgba value
+
+# Only one argument is allowed
+if [ $# -ne 1 ]; then
+    echo "Usage: rgba '<hex-color>' (e.g. rgba '#ff0000)'"
+    exit 1
+fi
+
+# The first character must be a '#'
+if [ "${1:0:1}" != "#" ]; then
+    echo "Invalid hex color. Please provide a valid hex color (e.g. '#ff0000')"
+    exit 1
+fi
+
+~/bin/langs/python/rgba_py.py "$1"
