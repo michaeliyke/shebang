@@ -1,4 +1,15 @@
 #!/usr/bin/bash
+# This script is a wrapper for a project in development.
+# Just inlcude a .run.sh file in $PWD with the commands you want to run
+
+# Invoke $PWD/.run.sh by sourcing if exists
+if [ -f "$PWD/.run.sh" ]; then
+    # shellcheck disable=SC1091
+    source "${PWD}/.run.sh"
+else
+    echo "No .run.sh found in $PWD"
+    exit 1
+fi
 # npm run dev "$@"
-cat $(realpath $1) | mysql -uroot -p holberton
+# cat $(realpath $1) | mysql -uroot -p holberton
 
