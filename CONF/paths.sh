@@ -12,13 +12,9 @@ cust_bin_paths=(
 	"$bin/commons/server" # commons
 
 	# OTHERS BELOW
-	"$bin/bash" # commons
-	"$bin/c" # commons
+	"$bin/bash-samples" # commons
 	"$bin/git" # commons
 	"$bin/test" # commons
-	"$bin/AirBnB_clone" # commons
-	"$bin/AirBnB_clone/automation" # commons
-	"$bin/automation" # commons
 	"$bin/configs" # commons
 	"$bin/configs/W3C-Validator" # commons
 	"$bin/validators" # commons

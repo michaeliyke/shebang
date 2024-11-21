@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# List only directories of a folder
+if (( $# == 0 ));
+	then # List directories of current directory
+	# ls */ -d
+	ls -p | grep "/"
+else
+	# List directores for each dir mentioned in the argument list
+	for dir in "${[@]}"; do
+		# ls "$dir" -d;
+		ls -p | grep "/"
+	done
+fi
