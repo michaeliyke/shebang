@@ -2,7 +2,7 @@
 #+ PERSONAL TERMINAL ALIASES
 
 
-alias {activate_env,env_activate,my_env,myenv,activatenv,envactivate}="source ~/bin/env_activate_script.sh"
+alias {activate_env,env_activate,my_env,myenv,activatenv,envactivate}="source ~/bin/commons/env_activate_script.sh"
 
 alias py="python"
 alias {vag,vgr,vagr}='valgrind'
