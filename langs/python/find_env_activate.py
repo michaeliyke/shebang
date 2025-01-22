@@ -11,4 +11,5 @@ def find_activate() -> str:
 
 # Run the function if the script is run directly
 if __name__ == '__main__':
-    print(find_activate())
+    file_ = find_activate()
+    print(file_)
