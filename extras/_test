@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+# This script is a wrapper for a project in development.
+# Just inlcude a .test.sh file in $PWD with the commands you want to run
+
+# Invoke $PWD/.test.sh by sourcing if exists
+if [ -f "$PWD/.test.sh" ]; then
+    # shellcheck source=/dev/null
+    # pass any args to ..test.sh else run it without arguments
+    if [ "$#" -eq 0 ]; then
+        source "${PWD}/.test.sh"
+    else
+        source "${PWD}/.test.sh" "$@"
+    fi
+else
+    echo "No .test.sh found in $PWD"
+    exit 1
+fi
+# pnpm test "$@"
+

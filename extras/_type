@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+# This script is a wrapper for a project in development.
+# Just inlcude a .type.sh file in $PWD with the commands you want to run
+
+# Invoke $PWD/.type.sh by sourcing if exists
+if [ -f "$PWD/.type.sh" ]; then
+    # shellcheck source=/dev/null
+    # pass any args to ..type.sh else run it without arguments
+    if [ "$#" -eq 0 ]; then
+        source "${PWD}/.type.sh"
+    else
+        source "${PWD}/.type.sh" "$@"
+    fi
+else
+    echo "No .type.sh found in $PWD"
+    exit 1
+fi
+# pnpm type "$@"
+

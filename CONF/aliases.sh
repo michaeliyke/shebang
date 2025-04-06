@@ -12,7 +12,7 @@ alias vgus="vg up && vg ssh"
 alias vgsu="vg up && vg ssh"
 alias vgs="vg ssh"
 alias start="open"
-# alias medm="python3 /home/michaeliyke/michaeliyke/projects/medm"
+# alias medm="python3 ~/michaeliyke/projects/medm"
 
 alias {sch,shch,shchck,shchk,schk,schck,scheck}="shellcheck"
 
