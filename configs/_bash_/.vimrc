@@ -1,22 +1,20 @@
---[[
-    HOW TO INSTALL AND SETUP VIM FOR THIS TO WORK
-
-    (0). sudo apt install vim
-
-    (1). sudo apt install xclip
-
-    (2). curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-     (3). GOTO vim and run this below to install auto-pairs and NERDTree:
-     :PlugInstall
-
-     (4). Reload Vim or source the config
-     :source ~/.vimrc
-
-     NOTE: Toggle NERDTree with Ctrl+b
-]]
-
+"HOW TO INSTALL AND SETUP VIM FOR THIS TO WORK
+"
+" (0). sudo apt install vim
+"
+" (1). sudo apt install xclip
+"
+" (2). curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"
+" (3). GOTO vim and run this below to install auto-pairs and NERDTree:
+"   :PlugInstall
+"
+" (4). Reload Vim or source the config
+"   :source ~/.vimrc
+"
+" NOTE: Toggle NERDTree with Ctrl+b
+"
 :imap <C-/> #
 set tabstop=8 shiftwidth=8
 set autoindent
@@ -65,5 +63,5 @@ set mouse=a
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
--- filetype plugin indent on
+" filetype plugin indent on
 filetype plugin indent on
