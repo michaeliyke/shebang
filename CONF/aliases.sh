@@ -12,6 +12,8 @@ alias vgus="vg up && vg ssh"
 alias vgsu="vg up && vg ssh"
 alias vgs="vg ssh"
 alias start="open"
+alias flushmem="clear_cache"
+# alias medm="python -m medm"
 # alias medm="python3 ~/michaeliyke/projects/medm"
 
 alias {sch,shch,shchck,shchk,schk,schck,scheck}="shellcheck"
