@@ -15,6 +15,9 @@
 "
 " NOTE: Toggle NERDTree with Ctrl+b
 "
+
+" Make yy, dd, and y to copy the yanked or deleted data to the system clipboard
+set clipboard=unnamedplus
 :imap <C-/> #
 set tabstop=8 shiftwidth=8
 set autoindent

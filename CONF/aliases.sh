@@ -13,6 +13,7 @@ alias vgsu="vg up && vg ssh"
 alias vgs="vg ssh"
 alias start="open"
 alias flushmem="clear_cache"
+alias {qr_note,qr_code_note,note_qr_code}='valgrind'="create_qr_note"
 # alias medm="python -m medm"
 # alias medm="python3 ~/michaeliyke/projects/medm"
 

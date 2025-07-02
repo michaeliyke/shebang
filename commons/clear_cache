@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'
+
+# Created a custom keyboard shortcut and in the command section pasted below
+# gnome-terminal -- bash -c 'clear; ~/bin/commons/clear_cache; read -p "Cache cleared. Press any key to exit..."'

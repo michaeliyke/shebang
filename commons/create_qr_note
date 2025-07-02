@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# Open vi and wait for user to save and exit
+vi qrcodenote.txt
+
+# Read the contents after vi has exited
+result=$(cat qrcodenote.txt)
+
+echo "Following are the results"
+
+# Generate QR code image
+medm qr generate "$result" -f qrcodenote.png
+
+# Open the image and wait until the viewer exits (optional: see note below)
+xdg-open qrcodenote.png
+
+# Wait for user to view the image before cleanup (adjust if xdg-open detaches)
+read -p "Press Enter to clean up and exit..."
+
+# Cleanup: Move files to trash using gio trash
+# gio trash is the modern command for trashing files on GNOME
+gio trash qrcodenote.png qrcodenote.txt
+
+echo "Files moved to trash bin using gio trash."
