@@ -1,0 +1,1 @@
+console.log("Hello from within the worker process");
